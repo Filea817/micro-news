@@ -57,16 +57,16 @@ return (
     <>
     <header className="bg-gray-900 text-white p-4">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold hover:underline">
-            ミクロ社会ニュース
-        </Link>
-        <Nav />
+            <Link href="/" className="text-xl font-bold hover:underline">
+                ミクロ社会ニュース
+            </Link>
+            <Nav />
         </div>
     </header>
 
     <main className="max-w-5xl mx-auto p-6">
         <h2 className="text-xl font-bold mb-4 text-gray-800">
-        カテゴリ: {category}
+            カテゴリ: {category}
         </h2>
 
         {loading ? (
@@ -85,36 +85,56 @@ return (
             ))}
         </ul>
         )}
+
+        {/* 広告表示場所 */}
+        <Script
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3635913502005838"
+        crossOrigin="anonymous"
+        />
+
+        {/* 広告 */}
+        <ins
+            className="adsbygoogle"
+            style={{ display: 'block' }}
+            data-ad-client="ca-pub-3635913502005838"
+            data-ad-slot="9328172597"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+            />
+            <Script id="adsbygoogle-init" strategy="afterInteractive">
+                {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+            </Script>
     </main>
 
     {/* ページネーション表示 */}
-                  {totalPages > 1 && (
-              <div className="col-span-full mt-6 flex justify-center space-x-2 mr-70">
-              {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentPage(i + 1)}
-                className={`px-3 py-1 border rounded ${
-                  currentPage === i + 1
+        {totalPages > 1 && (
+            <div className="col-span-full mt-6 flex justify-center space-x-2 mr-70">
+                {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                    key={i}
+                    onClick={() => setCurrentPage(i + 1)}
+                    className={`px-3 py-1 border rounded ${
+                    currentPage === i + 1
                     ? 'bg-gray-800 text-white'
                     : 'bg-white text-gray-800'
-                }`}
-              >
+                    }`}
+                >
                 {i + 1}
-              </button>
+            </button>
             ))}
-          </div>
-        )}
+        </div>
+    )}
 
-        {/* フッター */}
+    {/* フッター */}
         <footer className="bg-gray-100 text-gray-600 text-sm text-center py-4 mt-12 border-t">
-    <div className="max-w-5xl mx-auto flex justify-between items-center">
-    <Link href="/" className="text-xl font-bold hover:underline">
-    ミクロ社会ニュース
-    </Link>
-    <Footer/>
-    </div>
-    </footer>
+                <div className="max-w-5xl mx-auto flex justify-between items-center">
+                <Link href="/" className="text-xl font-bold hover:underline">
+                ミクロ社会ニュース
+                </Link>
+                <Footer/>
+            </div>
+        </footer>
     </>
 )
 }
