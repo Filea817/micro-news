@@ -127,11 +127,8 @@ export default function ArticlePage() {
     <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
-        data-ad-client="ca-pub-0000000000000000"
-        data-ad-slot="1234567890"        
-
-        //data-ad-client="ca-pub-3635913502005838"
-        //data-ad-slot="9328172597"
+        data-ad-client="ca-pub-3635913502005838"
+        data-ad-slot="9328172597"
         data-ad-format="auto"
         data-full-width-responsive="true"
       />

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { db } from '../lib/firebase'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import Script from 'next/script'
 import {
   collection,
   getDocs,
@@ -101,7 +102,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 🔥 ここに注目記事セクションを追加 */}
+      {/* トレンド記事 */}
       {topArticle && (
         <section className="max-w-5xl mx-auto p-6">
           <h2 className="text-lg font-bold text-gray-900 mb-2">🕒 トレンド記事</h2>
@@ -155,10 +156,30 @@ export default function Home() {
             ))}
           </ul>
         </aside>
+
+      {/* 広告表示場所 */}
+      <Script
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3635913502005838"
+          crossOrigin="anonymous"
+        />
+
+      {/* 広告 */}
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client="ca-pub-3635913502005838"
+        data-ad-slot="9328172597"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+      <Script id="adsbygoogle-init" strategy="afterInteractive">
+        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </Script>
       </main>
       
 
-              {/* ページネーション表示 */}
+      {/* ページネーション表示 */}
               {totalPages > 1 && (
               <div className="col-span-full mt-6 flex justify-center space-x-2 mr-70">
               {Array.from({ length: totalPages }, (_, i) => (
