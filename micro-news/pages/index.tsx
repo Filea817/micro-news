@@ -5,7 +5,6 @@ import { db } from '../lib/firebase'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Script from 'next/script'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import {
   collection,
   getDocs,
@@ -100,7 +99,6 @@ export default function Home() {
             ミクロ社会ニュース
           </Link>
           <Nav />
-          <SpeedInsights />
         </div>
       </header>
 
